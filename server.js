@@ -33,8 +33,8 @@ app.set("view engine", "ejs");
 // });
 
 app.post("/create-item", (req, res) => {
-  //   console.log(req.body);
-  //   res.json({ test: "success" });
+  console.log(req.body);
+  res.json({ test: "success" });
 });
 
 app.get("/author", (req, res) => {
