@@ -4,7 +4,7 @@ const app = express();
 const fs = require("fs");
 
 //MongoDB connection
-const db = require("./server");
+const db = require("./server").db();
 
 let user;
 fs.readFile("database/user.json", "utf-8", (err, data) => {
@@ -53,6 +53,7 @@ app.get("/", function (req, res) {
         console.log("ERROR:", err);
         res.end("Something went wrong.");
       } else {
+        console.log(data);
         res.render("reja", { items: data });
       }
     });

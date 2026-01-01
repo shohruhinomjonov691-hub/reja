@@ -1,10 +1,9 @@
 const http = require("http");
-// const app = require("./app");
 const mongodb = require("mongodb");
 
 let db;
 const connectionString =
-  "mongodb+srv://shohruh:ShohruH021026@cluster0.gnokhpd.mongodb.net/Reja?appName=Cluster0";
+  "mongodb+srv://shohruh:ShohruH021026@cluster0.gnokhpd.mongodb.net/Reja?retryWrites=true&w=majority";
 
 mongodb.connect(
   connectionString,
@@ -17,7 +16,7 @@ mongodb.connect(
       console.log("MongoDB connection ERROR:", err);
     } else {
       console.log("MongoDB connected SUCCESSFULLY");
-      module.exports = client.db();
+      module.exports = client;
 
       const app = require("./app");
       const server = http.createServer(app);
