@@ -37,3 +37,39 @@ document.getElementById("create-form").addEventListener("submit", function (e) {
       console.log("Iltimos qaytadan harakat qiling!");
     });
 });
+
+document.addEventListener("click", function (e) {
+  //  Delete oper
+  if (e.target.classList.contains("delete-me")) {
+    if (confirm("Aniq ochirmoqchimisiz?")) {
+      axios
+        .post("/delete-item", { id: e.target.getAttribute("data-id") })
+        .then((response) => {
+          console.log(response.data);
+          e.target.parentElement.parentElement.remove();
+        })
+        .catch((err) => {
+          console.log("Iltimos qaytadan harakat qiling!");
+        });
+    }
+  }
+
+  //   Edit oper
+  if (e.target.classList.contains("edit-me")) {
+    alert("siz edit tugmasini bosdingiz");
+  }
+});
+
+/*
+/  
+  console.log(e);
+
+  if (e.target.classList.contains("delete-me")) {
+    if (confirm("Aniq ochirmoqchimisiz?")) {
+      alert("Yes deb javob berildi");
+    } else {
+      alert("No deb javob berildi");
+    }
+    alert("siz delete tugmasini bosdingiz");
+  }
+*/

@@ -5,6 +5,7 @@ const fs = require("fs");
 
 //MongoDB connection
 const db = require("./server").db();
+const mongodb = require("mongodb");
 
 let user;
 fs.readFile("database/user.json", "utf-8", (err, data) => {
@@ -33,14 +34,19 @@ app.post("/create-item", (req, res) => {
   db.collection("plans").insertOne({ reja: new_reja }, (err, data) => {
     console.log(data.ops);
     res.json(data.ops[0]);
-
-    // if (err) {
-    //   console.log(err);
-    //   res.end("something went wrong");
-    // } else {
-    //   res.end("successfully added");
-    // }
   });
+});
+
+app.post("/delete-item", (req, res) => {
+  const id = req.body.id;
+  db.collection("plans").deleteOne(
+    { _id: new mongodb.ObjectId(id) },
+    function (err, data) {
+      res.json({ state: "success" });
+    }
+  );
+  // console.log(id);
+  // res.end("done");
 });
 
 app.get("/author", (req, res) => {
@@ -63,6 +69,7 @@ app.get("/", function (req, res) {
 });
 
 module.exports = app;
+
 /*
 PATTERNS:
     - ARCHITECTURE PATTERN
@@ -79,3 +86,10 @@ FRONTEND QURISH:
 // app.get("/gift", function (req, res) {
 //   res.end(`<h1>Siz sovg'alar bo'limidasiz</h1>`);
 // });
+
+// if (err) {
+//   console.log(err);
+//   res.end("something went wrong");
+// } else {
+//   res.end("successfully added");
+// }
