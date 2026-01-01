@@ -1,3 +1,34 @@
+/* TASK A
+Harf sifatida kiritilgan birinchi parametr, 
+kiritilgan ikkinchi parametr tarkibida nechta ekanligini qaytaruvchi
+Funktsiya tuzing
+
+Masalan: countLetter("e", "engineer")
+'engineer' so'zi tarkibida 'e' harfi 3 marotaba takrorlanganligi uchun
+3 sonini qaytaradi
+*/
+// A - TASK
+// Masalani izohi
+// A-TASK:
+
+// Shunday 2 parametrli function tuzing, hamda birinchi parametrdagi ,
+// letterni ikkinchi parametrdagi sozdan qatnashga sonini return qilishi kerak boladi.
+// MASALAN countLetter("e", "engineer") 3ni return qiladi.
+
+// masalani yechimi:
+function countLetter(letter, word) {
+  let number = 0;
+
+  for (let i = 0; i < word.length; i++) {
+    if (word[i] === letter) {
+      number++;
+    }
+  }
+  return number;
+}
+console.log(countLetter("e", "experience"));
+// ============================================================
+
 // console.log("Jack Ma maslahatlari");
 // const list = [
 //   "Yahshi talaba boling", // 0-20
@@ -75,16 +106,3 @@
 //   console.log("javob:", data);
 // });
 // console.log("passed here 1");
-
-function countLetter(letter, word) {
-  let count = 0;
-
-  for (let i = 0; i < word.length; i++) {
-    if (word[i] === letter) {
-      count++;
-    }
-  }
-
-  return count;
-}
-console.log(countLetter("e", "experience"));
