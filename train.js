@@ -15,7 +15,7 @@ return hozir 20:50da lta non, 5ta lagmon va 6ta cola mavjud!
 // 1 -case:
 const moment = require("moment");
 
-const time = moment().format("HH: mm");
+const time = moment().format("HH:mm");
 
 class Shop {
   constructor(non, lagmon, cola) {
@@ -29,15 +29,15 @@ class Shop {
       console.log(`Bizda "${s}" mahsuloti mavjud emas !`);
     } else if (b > this.non && b > this.lagmon && b > this.cola) {
       console.log(`${b} son noto‘g‘ri / yetarli emas`);
-    } else if (s === "non" && typeof b === "number" && b < this.non) {
+    } else if (s === "non" && typeof b === "number" && b <= this.non) {
       this.non -= b;
-      console.log(`Hozirda ${time}da ${b}ta non sotildi!`);
-    } else if (s === "lagmon" && typeof b === "number" && b < this.lagmon) {
+      console.log(`Hozirda ${time} da : ${b} ta non sotildi!`);
+    } else if (s === "lagmon" && typeof b === "number" && b <= this.lagmon) {
       this.lagmon -= b;
-      console.log(`Hozirda ${time}da ${b}ta lagmon sotildi!`);
-    } else if (s === "cola" && typeof b === "number" && b < this.cola) {
+      console.log(`Hozirda ${time} da : ${b} ta lagmon sotildi!`);
+    } else if (s === "cola" && typeof b === "number" && b <= this.cola) {
       this.cola -= b;
-      console.log(`Hozirda ${time}da ${b}ta cola sotildi!`);
+      console.log(`Hozirda ${time} da : ${b} ta cola sotildi!`);
     }
   }
 
@@ -48,24 +48,25 @@ class Shop {
       console.log(`${c} son noto‘g‘ri / yetarli emas`);
     } else if (q === "non" && typeof c === "number" && c >= 0) {
       this.non += c;
-      console.log(`Hozirda ${time}da ${c}ta non qabul qilindi!`);
+      console.log(`Hozirda ${time} da : ${c} ta non qabul qilindi!`);
     } else if (q === "lagmon" && typeof c === "number" && c >= 0) {
       this.lagmon += c;
-      console.log(`Hozirda ${time}da ${c}ta lagmon qabul qilindi!`);
+      console.log(`Hozirda ${time} da : ${c} ta lagmon qabul qilindi!`);
     } else if (q === "cola" && typeof c === "number" && c >= 0) {
       this.cola += c;
-      console.log(`Hozirda ${time}da ${c}ta cola qabul qilindi!`);
+      console.log(`Hozirda ${time} da : ${c} ta cola qabul qilindi!`);
     }
   }
 
-  qoldiq(a) {
+  qoldiq() {
     console.log(
-      `Hozir ${time}da ${this.non}ta non, ${this.lagmon}ta lagmon va ${this.cola}ta cola mavjud!`
+      `Hozir ${time} da : ${this.non} ta non, ${this.lagmon} ta lagmon va ${this.cola} ta cola mavjud!`
     );
   }
 }
 
 const shop = new Shop(4, 5, 2);
+shop.qoldiq();
 shop.qabul("non", 10);
 shop.qabul("lagmon", 10);
 shop.qabul("cola", 10);
@@ -76,7 +77,7 @@ shop.sotish("cola", 11);
 shop.qoldiq();
 ///==========================
 shop.qabul("cola", -5);
-shop.sotish("lagmon", 10);
+shop.sotish("lagmon", 5);
 shop.qoldiq();
 
 // Task-B
