@@ -76,7 +76,7 @@ PATTERNS:
     - DESING PATTERN
 FRONTEND QURISH:
     - BSSR (EJS)
-    - SPA (REACT)  
+    - SPA (REACT)
 */
 
 // app.get("/hello", function (req, res) {

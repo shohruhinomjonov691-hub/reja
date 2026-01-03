@@ -1,6 +1,6 @@
 console.log("FrontEnd JS ishga tushdi");
 
-function itemTemplate(data) {
+function itemTemplate(item) {
   return `<li
           class="list-group-item list-group-item-info d-flex align-items-center justify-content-between">
           <span class="item-text">${item.reja}</span>
@@ -11,7 +11,7 @@ function itemTemplate(data) {
               Ozgartirish
             </button>
             <button
-              data-id="${item._id}>"
+              data-id="${item._id}"
               class="delete-me btn btn-danger btn-sm">
               Ochirish
             </button>
@@ -21,7 +21,7 @@ function itemTemplate(data) {
 
 let createField = document.getElementById("create-field");
 
-document.getElementById("create-from").addEventListener("submit", function (e) {
+document.getElementById("create-form").addEventListener("submit", function (e) {
   e.preventDefault();
 
   axios
