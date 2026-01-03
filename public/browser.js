@@ -21,7 +21,7 @@ function itemTemplate(data) {
 
 let createField = document.getElementById("create-field");
 
-document.getElementById("create-form").addEventListener("submit", function (e) {
+document.getElementById("create-from").addEventListener("submit", function (e) {
   e.preventDefault();
 
   axios
