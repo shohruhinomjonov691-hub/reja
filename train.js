@@ -1,4 +1,38 @@
 // MITTASK
+/* D-TASK
+* Savol:Shunday function tuzing, u 2ta string parametr ega bolsin,
+hamda agar har ikkala string bir hil harflardan iborat bolsa true
+aks holda false qaytarsin
+*
+MASALAN checkContent("mitgroup", "gmtiprou") return qiladi true;
+*/
+/*Masalaning yechimi:
+ */
+
+function checkContent(a, b) {
+  if (a.length !== b.length) {
+    return false;
+  }
+
+  a = a.toLowerCase();
+  b = b.toLowerCase();
+
+  a = a.split("").sort().join("");
+  b = b.split("").sort().join("");
+
+  for (let i = 0; i < a.length; i++) {
+    if (a[i] !== b[i]) {
+      return false;
+    }
+  }
+  return true;
+}
+
+console.log(checkContent("abcd", "bacd"));
+console.log(checkContent("MitGroup", "gmtiprou"));
+console.log(checkContent("hello", "olleh"));
+console.log(checkContent("abc", "abd"));
+console.log(checkContent("abc", "ab"));
 
 /* C-TASK
 * Savol: Shunday class tuzing tuzing nomi Shop,
@@ -13,6 +47,7 @@ return hozir 20:50da lta non, 5ta lagmon va 6ta cola mavjud!
 /*Masalaning yechimi:
  */
 // 1 -case:
+/*
 const moment = require("moment");
 
 const time = moment().format("HH:mm");
@@ -79,6 +114,7 @@ shop.qoldiq();
 shop.qabul("cola", -5);
 shop.sotish("lagmon", 5);
 shop.qoldiq();
+*/
 
 // Task-B
 // Shunday function tuzing, u 1ta string parametrga ega bolsin, hamda osha stringda qatnashgan raqamlarni sonini bizga return qilsin.
