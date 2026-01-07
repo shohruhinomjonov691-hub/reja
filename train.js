@@ -1,4 +1,27 @@
 // MITTASK
+/*
+TASK E: 
+
+Shunday function tuzing, u bitta string argumentni qabul qilib osha stringni teskari qilib return qilsin.
+* MASALAN: getReverse("hello") return qilsin "olleh"
+*/
+/*Masalaning yechimi:
+ */
+
+function getReverse(a) {
+  a = a.split("").reverse().join("");
+
+  return a;
+}
+
+console.log(getReverse("Hello"));
+console.log(getReverse("Salom"));
+console.log(getReverse("nofeleT"));
+// Palindromlar
+console.log(getReverse("detartrated"));
+console.log(getReverse("level"));
+console.log(getReverse("qovoq"));
+
 /* D-TASK
 * Savol:Shunday function tuzing, u 2ta string parametr ega bolsin,
 hamda agar har ikkala string bir hil harflardan iborat bolsa true
@@ -7,7 +30,6 @@ aks holda false qaytarsin
 MASALAN checkContent("mitgroup", "gmtiprou") return qiladi true;
 */
 /*Masalaning yechimi:
- */
 
 function checkContent(a, b) {
   if (a.length !== b.length) {
@@ -33,7 +55,7 @@ console.log(checkContent("MitGroup", "gmtiprou"));
 console.log(checkContent("hello", "olleh"));
 console.log(checkContent("abc", "abd"));
 console.log(checkContent("abc", "ab"));
-
+*/
 /* C-TASK
 * Savol: Shunday class tuzing tuzing nomi Shop,
 va uni constructoriga 3 hil mahsulot pass bolsin, hamda classning
