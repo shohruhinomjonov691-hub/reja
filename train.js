@@ -1,12 +1,47 @@
 // MITTASK
 /*
+TASK F:
+
+Yagona string argumentga ega findDoublers nomli function tuzing
+Agar stringda bittadan ortiq bir xil harflar ishtirok etgan bo'lsa
+true yokida false natija qaytarsin.
+
+* MASALAN: findDoublers("hello"); natija true qaytadi. 
+Sababi ikki marotaba takrorlangan 'll' harfi mavjud!
+*/
+/* Masalaning yechimi:
+ */
+function findDoublers(a) {
+  a = a.toLowerCase();
+
+  let a1 = new Set();
+
+  for (let i = 0; i < a.length; i++) {
+    let a2 = a[i];
+
+    if (a1.has(a2)) {
+      return true;
+    }
+
+    a1.add(a2);
+  }
+
+  return false;
+}
+
+console.log(findDoublers("Hello"));
+console.log(findDoublers("Helo"));
+console.log(findDoublers("aa"));
+console.log(findDoublers("Aba"));
+console.log(findDoublers("bok"));
+
+/*
 TASK E: 
 
 Shunday function tuzing, u bitta string argumentni qabul qilib osha stringni teskari qilib return qilsin.
 * MASALAN: getReverse("hello") return qilsin "olleh"
 */
 /*Masalaning yechimi:
- */
 
 function getReverse(a) {
   a = a.split("").reverse().join("");
@@ -21,6 +56,7 @@ console.log(getReverse("nofeleT"));
 console.log(getReverse("detartrated"));
 console.log(getReverse("level"));
 console.log(getReverse("qovoq"));
+*/
 
 /* D-TASK
 * Savol:Shunday function tuzing, u 2ta string parametr ega bolsin,
