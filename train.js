@@ -1,5 +1,34 @@
 // MITTASK
 /*
+TASK G:
+
+Yagona parametrga ega function tuzing.
+Va bu function parametr orqalik integer ma'lumot turlariga ega bo'lgan bir arrayni qabul qilsin.
+Ushbu function bizga arrayning tarkibidagi birinchi eng katta qiymatning indeksini qaytarsin.
+
+* MASALAN: getHighestIndex([5, 21, 12, 21 ,8]); return qiladi 1 sonini
+Yuqoridagi misolda, birinchi indeksda 21 joylashgan.
+Va bu 21 soni arrayning tarkibidagi birinchi eng katta son hisobladi va bizga uning indeksi 1 qaytadi.
+*/
+/* Masalaning yechimi:
+ */
+function getHighestIndex(a) {
+  let highestIndex = 0;
+
+  for (let i = 1; i < a.length; i++) {
+    if (a[i] > a[highestIndex]) {
+      highestIndex = i;
+    }
+  }
+
+  return highestIndex;
+}
+
+console.log(getHighestIndex([14, 35, 12, 5, 8, 4]));
+console.log(getHighestIndex([14, 35, 12, 5, 8, 45]));
+console.log(getHighestIndex([14, 35, 12, 50, 8, 45]));
+
+/*
 TASK F:
 
 Yagona string argumentga ega findDoublers nomli function tuzing
@@ -10,7 +39,6 @@ true yokida false natija qaytarsin.
 Sababi ikki marotaba takrorlangan 'll' harfi mavjud!
 */
 /* Masalaning yechimi:
- */
 function findDoublers(a) {
   a = a.toLowerCase();
 
@@ -34,6 +62,7 @@ console.log(findDoublers("Helo"));
 console.log(findDoublers("aa"));
 console.log(findDoublers("Aba"));
 console.log(findDoublers("bok"));
+*/
 
 /*
 TASK E: 
